@@ -20,14 +20,12 @@ module JSBAndGHA
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.generators do |generate|
-      generate.assets false # create assets when generating a scaffold
-      generate.helper false # generate helpers
-      generate.stylesheets false # generate stylesheets
-    end
-    config.generators do |g|
-      g.test_framework :rspec, :view_specs => false, :controller_specs => false,
-                       :helper_specs => false, :routing_specs => false, :fixture => true,
-                       :fixture_replacement => "factory_girl"
+      generate.assets false
+      generate.helper false
+      generate.stylesheets false
+      generate.test_framework :rspec, view_specs: false, controller_specs: false,
+                       helper_specs: false, routing_specs: false, fixture: false,
+                       fixture_replacement: "factory_bot"
     end
   end
 end
